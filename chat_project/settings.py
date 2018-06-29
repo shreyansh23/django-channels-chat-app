@@ -126,3 +126,11 @@ ASGI_APPLICATION = 'chat_project.routing.application'
 # mysite/settings.py
 # Channels
 ASGI_APPLICATION = 'chat_project.routing.application'
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+    },
+}
